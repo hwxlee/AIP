@@ -12,17 +12,17 @@ This script illustrates:
 EXPECTED INPUTS
 
 COHORT:
-	jid					= patient identifier
+	jid			= patient identifier
 	index_date	= index date
-	dip				= incident aip indicator
-	dip_date		= date of incident aip
+	dip			= incident aip indicator
+	dip_date	= date of incident aip
 
 APD:
-	jid					= patient identifier
-	med_start		= prescription start date
+	jid			= patient identifier
+	med_start	= prescription start date
 	med_end		= prescription end date
-	pkr				= dopamine d2 receptor affinity metric
-	bb				= blood-brain barrier penetration rate
+	pkr			= dopamine d2 receptor affinity metric
+	bb			= blood-brain barrier penetration rate
 	dddperday	= prescribed daily dose standardized by ddd
 =========================================================================*/
 
@@ -31,7 +31,7 @@ APD:
 
 
 /*=========================================================================
- 1. Calculate pharmacologically weighted exposure in each 30-day window
+  1. Calculate pharmacologically weighted exposure in each 30-day window
 =========================================================================*/
 
 proc sort data=cohort; by jid; run;
@@ -80,7 +80,7 @@ run;
 
 
 /*=========================================================================
-	2. Add window-level incident AIP outcome
+  2. Add window-level incident AIP outcome
 =========================================================================*/
 
 proc sort data=apd_sequence; by jid window; run;
@@ -102,7 +102,7 @@ run;
 
 
 /*=========================================================================
-	3. Create post-event mask
+  3. Create post-event mask
 =========================================================================*/
 
 data aip_apd_seq_mask;
