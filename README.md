@@ -8,11 +8,14 @@ The framework integrates longitudinal pharmacologically weighted antipsychotic e
 
 The analysis includes:
 
-- construction of longitudinal pharmacologic exposure trajectories
+- construction of pharmacologically weighted APD exposure in consecutive 30-day windows
+- construction of window-level AIP outcomes and post-event masking
 - sequential modeling using an attention-based LSTM
 - integration of baseline patient characteristics
 - internal model development and evaluation
 - assessment of overall and window-specific predictive performance
+
+The SAS code illustrates construction of the sequential APD exposure and outcome data used as model inputs. Baseline patient characteristics, comorbidities, and concomitant medication variables are assumed to be prepared separately and merged with the sequential exposure data before model training.
 
 ## Data Availability
 
